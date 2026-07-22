@@ -1,9 +1,7 @@
-source("r-scripts/00-preamble.R")
+source("r_scripts_forpub/00-preamble.R")
 
 
-
-
-# where are rl gartendiv observation in germany ------------------------------
+# where are rl gartendiv observations in germany? ------------------------------
 
 # load gartendiv observation counts
 shp <- readRDS("data_forpub/counts_germany.rds")
@@ -64,11 +62,9 @@ breaks_rl <- breaks_rl[breaks_rl <= max_rl]
 )
 
 
-
-# now lets plot the number of species in each category --------------------
+# plot the number of species in each category -----------------------------
 
 df <- read.csv("data_forpub/rl_freqs.csv")
-
 
 # color scheme
 vir_cols <- viridisLite::viridis(length(rl_levels), option = "mako", begin = 0.1, end = 0.8)
@@ -120,9 +116,8 @@ vir_cols <- viridisLite::viridis(length(rl_levels), option = "mako", begin = 0.1
 
 
 
+# do gardens give species a head start? -----------------------------------
 
-
-# do gardens give a head start? -------------------------------------------
 
 # this file contains species that occurred in gardens northward of their historic range
 polewards <- read.csv("data_forpub/polewards.csv")
@@ -261,6 +256,3 @@ fig2_panel_a /
       )
     )
   )
-
-
-
